@@ -1,23 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import AnalyticsOverview from './Component/AnalyticsOverview';
+import ContactForm from './Component/ContactForm';
+import CTASection from './Component/CTASection';
+import FAQSection from './Component/FAQSection';
+import FeatureSection from './Component/FeatureSection';
+import Footer from './Component/Footer';
+import Header from './Component/Header';
+import Hero from './Component/Hero';
+import PricingSection from './Component/PricingSection';
+import Testimonials from './Component/Testimonials';
+import UploadSection from './Component/Uploadsection';
+import UserTypeSection from './Component/UserTypeSection';
+
+
+
+
+
+
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Hero />
+      <UploadSection/>
+      <AnalyticsOverview/>
+      <FeatureSection/>
+      <UserTypeSection/>
+      <Testimonials/>
+      <PricingSection/>
+      <FAQSection/>
+      <ContactForm/>
+      <CTASection/>
+      <Footer/>
+      {/* Add other components here */}
     </div>
   );
 }

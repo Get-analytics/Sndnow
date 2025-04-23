@@ -1,0 +1,188 @@
+/* HeatmapChart.css */
+.heatmap-root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .heatmap-container {
+    position: relative;
+    border: 2px solid #ccc;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+  }
+  
+  .heatmap-background {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .heatmap-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.95);
+  }
+  
+  .heatmap-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 2;
+  }
+  
+  .heatmap-tooltip {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+  
+  .tooltip-content {
+    background-color: #111;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0.85;
+  }
+  
+  .heatmap-controls {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 4;
+  }
+  
+  .control-btn {
+    background-color: #f3f4f6;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .control-btn:hover {
+    background-color: #e5e7eb;
+  }
+  
+  .icon-eye::before {
+    content: '👁️';
+  }
+  
+  .icon-search::before {
+    content: '🔍';
+  }
+  
+  .icon-flag::before {
+    content: '🚩';
+  }
+  
+  .heatmap-mockup {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #f3f4f6, #fff);
+    padding: 2rem;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .mockup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .mockup-logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #111;
+  }
+  
+  .mockup-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .mockup-nav {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .mockup-nav span {
+    cursor: pointer;
+    color: #555;
+  }
+  
+  .mockup-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-weight: 500;
+  }
+  
+  .mockup-hero {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .mockup-hero-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .mockup-hero-right {
+    flex: 1;
+    background: #e5e7eb;
+    border-radius: 1rem;
+  }
+  
+  .placeholder {
+    height: 16px;
+    background-color: #ddd;
+    border-radius: 4px;
+  }
+  
+  .placeholder.large {
+    height: 24px;
+  }
+  
+  .mockup-cta {
+    margin-top: 1rem;
+    background-color: #3b82f6;
+    height: 36px;
+    border-radius: 0.5rem;
+    width: 50%;
+  }
+  
+  .mockup-features {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .mockup-feature {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
