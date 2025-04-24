@@ -102,7 +102,7 @@ const FeatureSection = () => {
     <section id="features" className="py-16 bg-white" ref={sectionRef}>
       <div className="container mx-auto px-6">
         <motion.div
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="max-w-3xl mx-auto  mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
@@ -127,7 +127,7 @@ const FeatureSection = () => {
             return (
               <motion.div
                 key={index}
-                className={`feature-card ${isPremiumFeature ? 'bg-gradient-to-br from-[#F8F6F3] to-[#F0EBE4]' : 'bg-[#F8F6F3]'} rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden`}
+                className={`feature-card ${isPremiumFeature ? 'bg-gradient-to-br from-[#F8F6F3] to-[#F0EBE4]' : 'bg-[#F8F6F3]'} rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden text-left `}
                 variants={itemVariants}
               >
                 {isPremiumFeature && (
@@ -140,9 +140,9 @@ const FeatureSection = () => {
                 <div className="bg-[#7C5832] bg-opacity-10 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
                   {feature.icon}
                 </div>
-                <h3 className="font-bold text-xl mb-3 text-gray-800 text-center">{feature.title}</h3>
-                <p className="text-gray-600 mb-4 text-center">{feature.description}</p>
-                <a href="#" className="text-[#7C5832] font-medium flex items-center justify-center group">
+                <h3 className="font-bold text-xl mb-3 text-gray-800">{feature.title}</h3>
+                <p className="text-gray-600 mb-4">{feature.description}</p>
+                <a href="#" className="text-[#7C5832] font-medium flex items-center group">
                   Learn more
                   <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
