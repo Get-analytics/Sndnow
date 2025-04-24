@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link2, Upload } from "lucide-react";
 import { useInView } from "react-intersection-observer";
 
-const UploadSection = () => {
+const UploadSection= () => {
   const [sectionRef, inView] = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -22,119 +22,17 @@ const UploadSection = () => {
     }
   };
 
-  const sectionStyle = {
-    padding: "4rem 0",
-    backgroundColor: "white",
-  };
-
-  const containerStyle = {
-    maxWidth: "100%",
-    padding: "0 1.5rem",
-    margin: "0 auto",
-  };
-
-  const cardStyle = {
-    maxWidth: "40rem",
-    margin: "0 auto",
-    backgroundColor: "#f8f6f3",
-    borderRadius: "1rem",
-    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-    padding: "2rem",
-  };
-
-  const headingStyle = {
-    fontSize: "1.875rem",
-    fontWeight: "bold",
-    color: "#7c5832",
-    textAlign: "center",
-    marginBottom: "2rem",
-  };
-
-  const descriptionStyle = {
-    textAlign: "center",
-    color: "#4a4a4a",
-    marginBottom: "3rem",
-    maxWidth: "40rem",
-    marginLeft: "auto",
-    marginRight: "auto",
-  };
-
-  const boxStyle = {
-    border: "2px dashed #b79f85",
-    borderRadius: "1rem",
-    padding: "1.5rem",
-  };
-
-  const formGridStyle = {
-    display: "grid",
-    gridTemplateColumns: "1fr",
-    gap: "2rem",
-  };
-
-  const formGroupStyle = {
-    display: "flex",
-    flexDirection: "column",
-    gap: "1rem",
-  };
-
-  const labelStyle = {
-    fontWeight: "500",
-    fontSize: "1.125rem",
-  };
-
-  const inputWrapperStyle = {
-    display: "flex",
-    gap: "0.5rem",
-    alignItems: "center",
-  };
-
-  const inputStyle = {
-    flex: "1",
-    padding: "0.75rem",
-    border: "1px solid #d1d5db",
-    borderRadius: "9999px",
-    outline: "none",
-    fontSize: "1rem",
-  };
-
-  const buttonStyle = {
-    padding: "0.75rem",
-    backgroundColor: "#7c5832",
-    color: "white",
-    borderRadius: "9999px",
-    cursor: "pointer",
-    transition: "background-color 0.3s",
-  };
-
-  const buttonHoverStyle = {
-    backgroundColor: "#7c5832cc",
-  };
-
-  const iconStyle = {
-    width: "1.25rem",
-    height: "1.25rem",
-  };
-
-  const noteStyle = {
-    fontSize: "0.875rem",
-    color: "#6b7280",
-  };
-
-  const hiddenStyle = {
-    display: "none",
-  };
-
   return (
-    <section id="get-started" style={sectionStyle} ref={sectionRef}>
-      <div style={containerStyle}>
+    <section id="get-started" className="py-16 bg-white" ref={sectionRef}>
+      <div className="container mx-auto px-6">
         <motion.div
-          style={cardStyle}
+          className="max-w-4xl mx-auto bg-[#F8F6F3] rounded-2xl shadow-md p-8 md:p-12"
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <motion.h2
-            style={headingStyle}
+            className="text-3xl font-bold text-[#7C5832] text-center mb-8"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -143,7 +41,7 @@ const UploadSection = () => {
           </motion.h2>
 
           <motion.p
-            style={descriptionStyle}
+            className="text-center text-gray-600 mb-12 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -152,73 +50,70 @@ const UploadSection = () => {
           </motion.p>
 
           <motion.div
-            style={boxStyle}
+            className="border-2 border-dashed border-[#B79F85] rounded-xl p-6 md:p-8"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <div style={formGridStyle}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* URL Input */}
               <motion.div
-                style={formGroupStyle}
+                className="flex flex-col space-y-4"
                 initial={{ opacity: 0, x: -20 }}
                 animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
-                <h3 style={labelStyle}>Enter your URL</h3>
-                <div style={inputWrapperStyle}>
+                <h3 className="font-medium text-lg">Enter your URL</h3>
+                <div className="flex">
                   <input
                     type="text"
                     placeholder="Paste the URL"
-                    style={inputStyle}
+                    className="flex-1 px-4 py-3 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-[#7C5832]"
                   />
                   <button
                     onClick={() => window.open("https://dashboard.sendnow.live/login", "_blank")}
-                    style={buttonStyle}
-                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#7c5832cc")}
-                    onMouseLeave={(e) => (e.target.style.backgroundColor = "#7c5832")}
+                    className="px-4 py-3 bg-[#7C5832] text-white rounded-r-full hover:bg-[#7C5832]/90 transition-colors duration-300"
                   >
-                    <Link2 style={iconStyle} />
+                    <Link2 className="w-5 h-5" />
                   </button>
                 </div>
-                <p style={noteStyle}>
+                <p className="text-sm text-gray-500">
                   Note: Paste any publicly accessible link to generate a shareable short URL and gather engagement analytics.
                 </p>
               </motion.div>
 
               {/* File Upload */}
               <motion.div
-                style={formGroupStyle}
+                className="flex flex-col space-y-4"
                 initial={{ opacity: 0, x: 20 }}
                 animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
-                <h3 style={labelStyle}>Drop Your Content</h3>
-                <div style={inputWrapperStyle}>
+                <h3 className="font-medium text-lg">Drop Your Content</h3>
+                <div className="flex items-center">
                   <input
                     readOnly
                     value="Upload Your Files"
-                    style={{ ...inputStyle, color: "#9ca3af", cursor: "default" }}
+                    className="flex-1 px-4 py-3 border border-gray-300 rounded-l-full bg-white text-gray-400 cursor-default"
                   />
                   <input
                     type="file"
                     id="file-upload"
-                    style={hiddenStyle}
+                    className="hidden"
                     onChange={handleFileChange}
                   />
                   <button
                     onClick={openFileDialog}
-                    style={buttonStyle}
-                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#7c5832cc")}
-                    onMouseLeave={(e) => (e.target.style.backgroundColor = "#7c5832")}
+                    className="px-4 py-3 bg-[#7C5832] text-white rounded-r-full hover:bg-[#7C5832]/90 transition-colors duration-300 h-full"
                   >
-                    <Upload style={iconStyle} />
+                    <Upload className="w-5 h-5" />
                   </button>
                 </div>
-                <p style={noteStyle}>
+                <p className="text-sm text-gray-500">
                   Note: Upload PDFs, Docs, PPTs, images, or videos. Maximum file size varies by plan—upgrade anytime for higher limits and advanced analytics.
                 </p>
               </motion.div>
+
             </div>
           </motion.div>
         </motion.div>
