@@ -187,7 +187,7 @@ const AnalyticsOverview = () => {
                         </div>
                         <div className="text-sm text-gray-500">{stat.title}</div>
                       </div>
-                      <div className="text-2xl font-bold">{stat.value}</div>
+                      <div className="text-2xl font-bold text-left">{stat.value}</div>
                     </motion.div>
                   ))}
                 </motion.div>
@@ -196,7 +196,7 @@ const AnalyticsOverview = () => {
                   {/* Session Graph */}
                   <Card className="border border-gray-100 shadow-sm">
                     <CardContent className="p-6">
-                      <div className="flex justify-between items-center mb-6">
+                      <div className="flex justify-between items-center mb-6 mt-[3%]">
                         <div className="flex items-center space-x-3">
                           <div className="bg-[#7C5832] bg-opacity-10 p-2 rounded-lg">
                             <Users className="w-5 h-5 text-[#7C5832]" />
@@ -260,7 +260,7 @@ const AnalyticsOverview = () => {
                   {/* Traffic Source */}
                   <Card className="border border-gray-100 shadow-sm">
                     <CardContent className="p-6">
-                      <div className="flex justify-between items-center mb-6">
+                      <div className="flex justify-between items-center mb-6 mt-[3%]">
                         <h3 className="font-medium text-gray-800">Traffic Source</h3>
                       </div>
 
@@ -306,7 +306,7 @@ const AnalyticsOverview = () => {
                       />
 
                       <div className="mt-6 bg-[#F8F6F3]/60 p-4 rounded-lg">
-                        <h4 className="font-medium text-gray-800 mb-2">Heatmap Insights</h4>
+                        <h4 className="font-medium text-gray-800 mb-2 text-left">Heatmap Insights</h4>
                         <ul className="space-y-2 text-sm text-gray-600">
                           <li className="flex items-start">
                             <div className="text-[#7C5832] mr-2">•</div>
@@ -355,8 +355,8 @@ const AnalyticsOverview = () => {
                       />
                         </div>
 
-                        <div className="flex-1 mt-8 md:mt-0">
-                          <div className="p-4 rounded-lg bg-[#F8F6F3]">
+                        <div className="flex-1 mt-8 md:mt-0 ml-[1%] ">
+                          <div className="p-4 rounded-lg bg-[#F8F6F3] ">
                             <h4 className="text-lg font-medium text-gray-800 mb-4">Device Insights</h4>
                             <ul className="space-y-3">
                               <li className="flex items-start">
@@ -445,7 +445,7 @@ const AnalyticsOverview = () => {
                           />
                         </div>
 
-                        <div className="flex-1 mt-8 md:mt-0 md:ml-6">
+                        <div className="flex-1 mt-8 md:mt-0 md:ml-6 text-left">
                           <div className="p-4 rounded-lg bg-[#F8F6F3]">
                             <h4 className="text-lg font-medium text-gray-800 mb-4">Time Spend Insights</h4>
                             <ul className="space-y-3">
@@ -519,7 +519,7 @@ const AnalyticsOverview = () => {
                          className="block mx-auto w-1/2 h-auto rounded-md"
                       />
 
-                      <div className="mt-8 bg-[#F8F6F3]/60 p-4 rounded-lg">
+                      <div className="mt-8 bg-[#F8F6F3]/60 p-4 rounded-lg text-left">
                         <h4 className="font-medium text-gray-800 mb-3">Geographic Insights</h4>
                         <ul className="space-y-2 text-sm text-gray-600">
                           <li className="flex items-start">
