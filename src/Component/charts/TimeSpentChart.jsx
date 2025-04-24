@@ -87,13 +87,13 @@ const TimeSpentChart = ({
       </ResponsiveContainer>
 
       {/* Bottom metrics */}
-      <div className="mt-8 grid grid-cols-3 gap-4">
-        <div className="bg-[#F8F6F3] p-4 rounded-lg">
+      <div className="mt-8 grid grid-cols-3 gap-4 text-left">
+        <div className="bg-[#F8F6F3] p-4 rounded-lg ">
           <h4 className="text-sm text-gray-600 mb-1">Avg. Session Time</h4>
           <p className="text-xl font-bold text-gray-800">04:27</p>
           <p className="text-xs text-green-500 font-medium mt-1">↑ 12% from last period</p>
         </div>
-        <div className="bg-[#F8F6F3] p-4 rounded-lg">
+        <div className="bg-[#F8F6F3] p-4 rounded-lg ">
           <h4 className="text-sm text-gray-600 mb-1">Longest Session</h4>
           <p className="text-xl font-bold text-gray-800">16:42</p>
           <p className="text-xs text-gray-500 mt-1">From United States</p>
