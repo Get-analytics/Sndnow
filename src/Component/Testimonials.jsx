@@ -15,7 +15,7 @@ const Testimonials = () => {
       text: "Sendnow has completely changed how I understand my audience. As a marketer, I used to guess which parts of my presentations were resonating. Now, with Sendnow's heatmaps, I have clear visual data that's helping me refine my content for better engagement. It's like having X-ray vision for my presentations!",
       name: "Sarah M.",
       title: "Marketing Manager",
-      rating: 5
+      rating: 4
     },
     {
       text: "As a video creator, knowing if people are actually watching my entire video or dropping off is crucial. Sendnow's detailed video analytics, showing watch time and even when viewers rewind, is a game-changer. I can now tailor my content to keep my audience hooked. Finally, meaningful video stats in one place!",
@@ -49,7 +49,7 @@ const Testimonials = () => {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
