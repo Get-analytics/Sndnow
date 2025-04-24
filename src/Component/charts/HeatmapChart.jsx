@@ -178,7 +178,7 @@ const HeatmapChart = ({
         ].map((stat, i) => (
           <motion.div 
             key={i}
-            className={`bg-white p-4 rounded-lg shadow-sm ${i < 2 ? "mb-4 md:mb-0 md:mr-4" : ""} flex-1`}
+            className={`bg-white p-4 rounded-lg shadow-sm ${i < 2 ? "mb-4 md:mb-0 md:mr-4" : ""} flex-1 text-left`}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
