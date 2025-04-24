@@ -68,7 +68,7 @@ const UploadSection= () => {
                   <input
                     type="text"
                     placeholder="Paste the URL"
-                    className="flex-1 px-4 py-3 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-[#7C5832]"
+                    className="flex-1 px-4 py-3 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-[#7C5832] w-[100px]"
                   />
                   <button
                     onClick={() => window.open("https://dashboard.sendnow.live/login", "_blank")}
@@ -94,7 +94,7 @@ const UploadSection= () => {
                   <input
                     readOnly
                     value="Upload Your Files"
-                    className="flex-1 px-4 py-3 border border-gray-300 rounded-l-full bg-white text-gray-400 cursor-default"
+                    className="flex-1 px-4 py-3 border border-gray-300 rounded-l-full bg-white text-gray-400 cursor-default w-[100px]"
                   />
                   <input
                     type="file"
