@@ -61,7 +61,7 @@ const Footer = () => {
             <p className="text-gray-600 mb-4">
               Understand every click, view, and interaction with your shared content.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center ">
               {socialLinks.map((link, idx) => (
                 <a
                   key={idx}
