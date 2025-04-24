@@ -89,7 +89,7 @@ const UserTypeSection = () => {
           {userTypes.map((userType, index) => (
             <motion.div
               key={index}
-              className="flex items-start mb-10 bg-white rounded-xl p-6 shadow-sm transition-all duration-300 hover:shadow-md"
+              className="flex items-start mb-10 bg-white rounded-xl p-6 shadow-sm transition-all duration-300 hover:shadow-md text-left"
               variants={itemVariants}
             >
               <div className="bg-[#7C5832] bg-opacity-10 w-12 h-12 rounded-full flex items-center justify-center shrink-0 mr-6">
