@@ -1,3 +1,5 @@
+// src/App.js
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import AnalyticsOverview from './Component/AnalyticsOverview';
 import ContactForm from './Component/ContactForm';
@@ -11,33 +13,37 @@ import PricingSection from './Component/PricingSection';
 import Testimonials from './Component/Testimonials';
 import UploadSection from './Component/Uploadsection';
 import UserTypeSection from './Component/UserTypeSection';
+import PrivacyPolicy from './Component/PrivacyPolicy';
+import TermsAndConditions from './Component/TermsAndConditions';  // Import TermsAndConditions component
 
-
-
-
-
-
-
-
-
+function Home() {
+  return (
+    <>
+      <Header />
+      <Hero />
+      <UploadSection />
+      <AnalyticsOverview />
+      <FeatureSection />
+      <UserTypeSection />
+      <Testimonials />
+      <PricingSection />
+      <FAQSection />
+      <ContactForm />
+      <CTASection />
+      <Footer />
+    </>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <UploadSection/>
-      <AnalyticsOverview/>
-      <FeatureSection/>
-      <UserTypeSection/>
-      <Testimonials/>
-      <PricingSection/>
-      <FAQSection/>
-      <ContactForm/>
-      <CTASection/>
-      <Footer/>
-      {/* Add other components here */}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />  {/* Add the new route */}
+      </Routes>
+    </Router>
   );
 }
 
