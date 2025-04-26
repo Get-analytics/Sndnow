@@ -28,7 +28,7 @@ import mapImage from "../assets/images/map.svg";
 import device from "../assets/images/image.png";
 import mapwith from "../assets/images/image copy.png";
 import time from "../assets/images/time.svg"
-import vid from "../assets/images/vid.svg"
+import vid from "../assets/images/videograph.png"
 const AnalyticsOverview = () => {
   const [sectionRef, inView] = useInView({
     threshold: 0.1,
@@ -579,26 +579,81 @@ const AnalyticsOverview = () => {
 
                 <TabsContent value="videoAnalytics" className="mt-6">
                   <Card className="border border-gray-100 shadow-sm">
-                    <CardContent className="p-6">
-                      <div className="flex justify-between items-center mb-6">
-                        <div className="flex items-center space-x-3">
-                          <div className="bg-[#7C5832] bg-opacity-10 p-2 rounded-lg">
-                            <Film className="w-5 h-5 text-[#7C5832]" />
-                          </div>
-                          <h3 className="font-medium text-gray-800">Video Analytics</h3>
-                        </div>
-                        <div>
-                          <span className="px-3 py-1 bg-[#7C5832] bg-opacity-5 text-[#7C5832] text-sm rounded-md font-medium">Last 30 days</span>
-                        </div>
-                      </div>
-                      <img
-                        src={vid}
-                        alt="World Map"
-                        style={{ width: 600,}}
-                         className="block mx-auto w-1/2 h-auto rounded-md"
-                      />
-                    
-                    </CardContent>
+                  <CardContent className="p-6">
+  <div className="flex flex-col md:flex-row justify-between items-center">
+    
+    {/* Left Side: Video Analytics */}
+    <div className="flex-1">
+      <div className="flex justify-between items-center mb-6">
+        <div className="flex items-center space-x-3">
+          <div className="bg-[#7C5832] bg-opacity-10 p-2 rounded-lg">
+            <Film className="w-5 h-5 text-[#7C5832]" />
+          </div>
+          <h3 className="font-medium text-gray-800">Video Analytics</h3>
+        </div>
+      </div>
+      <img
+        src={vid}
+        alt="Video Graph"
+        className="block mx-auto w-full md:w-[600px] h-auto rounded-md"
+      />
+    </div>
+
+    {/* Right Side: Video Insights */}
+    <div className="flex-1 flex justify-center items-center mt-8 md:mt-0 md:ml-6 w-full md:max-w-sm">
+      <div className="p-6 rounded-lg bg-[#F8F6F3] w-full">
+        <h4 className="text-lg font-semibold text-gray-800 mb-4 text-center">Video Insights</h4>
+        <ul className="space-y-4">
+          <li className="flex items-start">
+            <div className="bg-[#7C5832] rounded-full w-2 h-2 mt-2 mr-3"></div>
+            <p className="text-sm text-gray-600">
+              <span className="font-medium">Average Watch Time</span> improved by 15% this month
+            </p>
+          </li>
+          <li className="flex items-start">
+            <div className="bg-[#8D6E48] rounded-full w-2 h-2 mt-2 mr-3"></div>
+            <p className="text-sm text-gray-600">
+              <span className="font-medium">Peak Engagement</span> at 00:26 timestamp
+            </p>
+          </li>
+          <li className="flex items-start">
+            <div className="bg-[#B79F85] rounded-full w-2 h-2 mt-2 mr-3"></div>
+            <p className="text-sm text-gray-600">
+              <span className="font-medium">Replay Rate</span> increased by 22% after first watch
+            </p>
+          </li>
+          <li className="flex items-start">
+            <div className="bg-[#D4C5B4] rounded-full w-2 h-2 mt-2 mr-3"></div>
+            <p className="text-sm text-gray-600">
+              <span className="font-medium">Drop-off</span> minimized after 00:40 mark
+            </p>
+          </li>
+          {/* New Points */}
+          <li className="flex items-start">
+            <div className="bg-[#E5D8CA] rounded-full w-2 h-2 mt-2 mr-3"></div>
+            <p className="text-sm text-gray-600">
+              <span className="font-medium">Full Screen Usage</span> increased by 18%
+            </p>
+          </li>
+          <li className="flex items-start">
+            <div className="bg-[#C4A484] rounded-full w-2 h-2 mt-2 mr-3"></div>
+            <p className="text-sm text-gray-600">
+              <span className="font-medium">Forward Seeks</span> show a 25% rise in user navigation
+            </p>
+          </li>
+          <li className="flex items-start">
+            <div className="bg-[#A67C52] rounded-full w-2 h-2 mt-2 mr-3"></div>
+            <p className="text-sm text-gray-600">
+              <span className="font-medium">Backward Seeks</span> show users rewatching key moments (+12%)
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</CardContent>
+
                   </Card>
                 </TabsContent>
               </div>
