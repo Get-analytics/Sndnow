@@ -15,6 +15,8 @@ import UploadSection from './Component/Uploadsection';
 import UserTypeSection from './Component/UserTypeSection';
 import PrivacyPolicy from './Component/PrivacyPolicy';
 import TermsAndConditions from './Component/TermsAndConditions';  // Import TermsAndConditions component
+import AboutUs from './Component/Aboutus';
+
 
 function Home() {
   return (
@@ -41,6 +43,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />  {/* Add the new route */}
       </Routes>
     </Router>
