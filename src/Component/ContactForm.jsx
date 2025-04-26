@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import emailjs from "@emailjs/browser";
+import { Button, notification } from "antd";
+import { SmileOutlined, CloseCircleOutlined } from '@ant-design/icons';
 
 const ContactForm = () => {
   const [sectionRef, inView] = useInView({
@@ -49,6 +52,20 @@ const ContactForm = () => {
     return Object.values(newErrors).every((error) => error === "");
   };
 
+  const openNotification = (type, message, description) => {
+    notification.open({
+      message,
+      description,
+      icon: type === "success" ? (
+        <SmileOutlined style={{ color: "#108ee9" }} />
+      ) : (
+        <CloseCircleOutlined style={{ color: "#ff4d4f" }} />
+      ),
+      placement: 'bottomRight', // Set notification position to bottom-right
+    });
+  };
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -56,22 +73,36 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
+    const templateParams = {
+      from_name: formData.name,
+      to_name: "Recipient Name",
+      from_user_email: formData.email,
+      message: formData.message,
+    };
+
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await emailjs.send(
+        "service_mzezc3r",
+        "template_dgtk6az",
+        templateParams,
+        "2MXqFsSeI-iSNCcNs"
+      );
 
-      if (!response.ok) throw new Error("Failed to send message");
+      console.log("Email sent successfully:", response); // Add this line for debugging
+      openNotification(
+        "success",
+        "Message Sent Successfully!",
+        "Your message has been successfully sent."
+      );
 
-      alert("Message Sent!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      alert("Error: " + error.message);
-      console.error("Form submission error:", error);
+      console.log("Error sending email:", error); // Add this line for debugging
+      openNotification(
+        "error",
+        "Failed to Send Message",
+        `Error: ${error.text || 'Unknown error'}`
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -100,7 +131,6 @@ const ContactForm = () => {
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-             
               <input
                 type="text"
                 name="name"
@@ -113,7 +143,6 @@ const ContactForm = () => {
             </div>
 
             <div>
-             
               <input
                 type="email"
                 name="email"
@@ -126,7 +155,6 @@ const ContactForm = () => {
             </div>
 
             <div>
-             
               <textarea
                 name="message"
                 value={formData.message}
