@@ -4,7 +4,7 @@ import {
   TwitterIcon,
   InstagramIcon,
   FacebookIcon,
-  LinkedinIcon
+  LinkedinIcon,
 } from "lucide-react";
 
 const Footer = () => {
@@ -19,20 +19,10 @@ const Footer = () => {
       ],
     },
     {
-      category: "Resources",
-      links: [
-        { name: "Blog", href: "#" },
-        { name: "Guides", href: "#" },
-        { name: "Help Center", href: "#" },
-        { name: "Webinars", href: "#" },
-      ],
-    },
-    {
       category: "Company",
       links: [
-        { name: "About Us", href: "#" },
-        { name: "Careers", href: "#" },
-        { name: "Contact Us", href: "#" },
+        { name: "About Us", href: "/about-us" },
+        { name: "Contact Us", href: "#contact" },
         { name: "Privacy Policy", href: "/privacy-policy" },
         { name: "Terms of Service", href: "/terms-and-conditions" },
       ],
@@ -49,8 +39,10 @@ const Footer = () => {
   return (
     <footer className="bg-gray-100 py-12">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="flex flex-wrap justify-between gap-8">
+          {/* Column 1: Logo + Description + Social */}
           <motion.div
+            className="w-full md:w-[22%]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -61,7 +53,7 @@ const Footer = () => {
             <p className="text-gray-600 mb-4">
               Understand every click, view, and interaction with your shared content.
             </p>
-            <div className="flex space-x-4 justify-center ">
+            <div className="flex space-x-4 justify-start">
               {socialLinks.map((link, idx) => (
                 <a
                   key={idx}
@@ -74,9 +66,11 @@ const Footer = () => {
             </div>
           </motion.div>
 
+          {/* Column 2 & 3: Footer Links */}
           {footerLinks.map((category, idx) => (
             <motion.div
               key={idx}
+              className="w-full md:w-[22%]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 * (idx + 1) }}
@@ -96,6 +90,29 @@ const Footer = () => {
               </ul>
             </motion.div>
           ))}
+
+          {/* Column 4: Contact Us */}
+          <motion.div
+            className="w-full md:w-[22%]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <h4 className="font-bold mb-4">Contact Us</h4>
+            <div className="text-sm text-gray-600 space-y-2">
+             
+              <p className="text-[#7C5832]">sendnow.live@gmail.com</p>
+             
+              <a
+                href="https://x.com/carter_ale15512"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#7C5832] underline"
+              >
+                Alex Carter
+              </a>
+            </div>
+          </motion.div>
         </div>
 
         <motion.div
