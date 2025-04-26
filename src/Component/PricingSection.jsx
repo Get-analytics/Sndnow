@@ -39,7 +39,7 @@ const PricingSection = () => {
         { text: "Analytics export", available: true },
         { text: "No watermark", available: true }
       ],
-      cta: "Comming Soon",
+      cta: "Coming Soon",
       ctaVariant: "default",
       highlight: false
     },
@@ -56,7 +56,7 @@ const PricingSection = () => {
         { text: "No watermark", available: true },
         { text: "Custom domain", available: true }
       ],
-      cta: "Comming Soon",
+      cta: "Coming Soon",
       ctaVariant: "default",
       highlight: true
     },
