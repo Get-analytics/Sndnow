@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "../Component/ui/button";
 import { useInView } from "react-intersection-observer";
 
-const Hero= () => {
+const Hero = () => {
   const [containerRef, containerInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -49,7 +49,7 @@ const Hero= () => {
               Shorten and share everything—in a single link, then dive into <span className="font-medium">heat maps, bounce rates, and location insights</span> to uncover the story behind every click.
             </motion.p>
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
-              <Button 
+              <Button
                 size="lg"
                 className="bg-[#7C5832] hover:bg-[#7C5832]/90 text-white rounded-full px-6 py-2"
                 onClick={() => {
@@ -61,7 +61,7 @@ const Hero= () => {
               >
                 Upload. Share. Analyze. For Free
               </Button>
-              <Button 
+              <Button
                 size="lg"
                 variant="outline"
                 className="border-[#7C5832] text-[#7C5832] hover:bg-[#7C5832] hover:text-white rounded-full px-6 py-2"
@@ -76,37 +76,25 @@ const Hero= () => {
               </Button>
             </motion.div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative shadow-xl rounded-2xl overflow-hidden bg-white p-1"
+            className="relative shadow-xl rounded-2xl overflow-hidden bg-white p-3"
           >
-            <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#D4C5B4]/20 to-[#7C5832]/20 z-10"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=900&q=80" 
-                alt="Analytics dashboard preview" 
-                className="w-full h-full object-cover"
-              />
-              <motion.div 
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: 0.8,
-                  ease: [0.19, 1.0, 0.22, 1.0]  
-                }}
-                className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
-              >
-                <div className="p-5 rounded-xl bg-white bg-opacity-95 shadow-lg backdrop-blur-sm">
-                  <h3 className="text-[#7C5832] font-bold text-xl mb-2">See your content's impact</h3>
-                  <p className="text-gray-800">Real-time insights for every share</p>
-                </div>
-              </motion.div>
+            <div className="relative aspect-[5/3] rounded-xl overflow-hidden ">
+              {/* Embed Vimeo video */}
+              <iframe
+                src="https://player.vimeo.com/video/1079069666?h=ada49f95c5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                className="absolute top-0 left-0 w-full h-full rounded-xl"
+                title="Sendnow | Upload. Share. Get analytics. All with a short URL."
+              ></iframe>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
