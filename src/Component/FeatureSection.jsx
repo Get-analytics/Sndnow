@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { 
-  BarChart3, 
-  PlayCircle, 
+import {
+  BarChart3,
+  PlayCircle,
   Map,
   ArrowRight,
   Upload,
@@ -102,17 +102,20 @@ const FeatureSection = () => {
     <section id="features" className="py-16 bg-white" ref={sectionRef}>
       <div className="container mx-auto px-6">
         <motion.div
-          className="max-w-3xl mx-auto  mb-16"
+          className="max-w-3xl mx-auto text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-[#7C5832] mb-4">Built for Every Workflow</h2>
+          <h2 className="text-3xl font-bold text-[#7C5832] mb-4">
+            Build for Every Workflow
+          </h2>
           <p className="text-gray-600">
             Whether you're pitching investors, teaching online, or marketing your latest drop, Sendnow arms you with the insights to level up your content game.
           </p>
         </motion.div>
-        
+
+
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"
           variants={containerVariants}
@@ -120,10 +123,10 @@ const FeatureSection = () => {
           animate={inView ? "visible" : "hidden"}
         >
           {features.map((feature, index) => {
-            const isPremiumFeature = 
-              feature.description.includes("Available on paid plans") || 
+            const isPremiumFeature =
+              feature.description.includes("Available on paid plans") ||
               feature.description.includes("Available on Pro");
-            
+
             return (
               <motion.div
                 key={index}
