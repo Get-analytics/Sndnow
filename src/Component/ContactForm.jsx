@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import emailjs from "@emailjs/browser";
-import { Button, notification } from "antd";
+import { notification } from "antd";
 import { SmileOutlined, CloseCircleOutlined } from '@ant-design/icons';
 
 const ContactForm = () => {
@@ -61,10 +60,9 @@ const ContactForm = () => {
       ) : (
         <CloseCircleOutlined style={{ color: "#ff4d4f" }} />
       ),
-      placement: 'bottomRight', // Set notification position to bottom-right
+      placement: 'bottomRight',
     });
   };
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -73,22 +71,44 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
-    const templateParams = {
-      from_name: formData.name,
-      to_name: "Recipient Name",
-      from_user_email: formData.email,
-      message: formData.message,
-    };
-
     try {
-      const response = await emailjs.send(
-        "service_mzezc3r",
-        "template_dgtk6az",
-        templateParams,
-        "2MXqFsSeI-iSNCcNs"
-      );
+      // Create a hidden form dynamically
+      const formElement = document.createElement('form');
+      formElement.method = 'POST';
+      formElement.action = 'https://formsubmit.co/sendnow.live@gmail.com'; 
 
-      console.log("Email sent successfully:", response); // Add this line for debugging
+      // Add form fields
+      Object.keys(formData).forEach((key) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = formData[key];
+        formElement.appendChild(input);
+      });
+
+      // Additional hidden fields
+      const subjectInput = document.createElement('input');
+      subjectInput.type = 'hidden';
+      subjectInput.name = '_subject';
+      subjectInput.value = 'New Contact Form Submission';
+      formElement.appendChild(subjectInput);
+
+      const captchaInput = document.createElement('input');
+      captchaInput.type = 'hidden';
+      captchaInput.name = '_captcha';
+      captchaInput.value = 'false';
+      formElement.appendChild(captchaInput);
+
+      const nextInput = document.createElement('input');
+      nextInput.type = 'hidden';
+      nextInput.name = '_next';
+      nextInput.value = window.location.href;
+      formElement.appendChild(nextInput);
+
+      document.body.appendChild(formElement);
+      formElement.submit();
+      document.body.removeChild(formElement);
+
       openNotification(
         "success",
         "Message Sent Successfully!",
@@ -97,12 +117,12 @@ const ContactForm = () => {
 
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      console.log("Error sending email:", error); // Add this line for debugging
       openNotification(
         "error",
         "Failed to Send Message",
-        `Error: ${error.text || 'Unknown error'}`
+        `Error: ${error.message || 'Unknown error'}`
       );
+      console.error("Form submission error:", error);
     } finally {
       setIsSubmitting(false);
     }
