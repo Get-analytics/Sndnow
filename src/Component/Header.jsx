@@ -67,14 +67,16 @@ const Header = () => {
 
         <div className="flex items-center space-x-4">
           <a
-            href="#"
+            href="https://dashboard.sendnow.live/login" target="_blank"
             className="hidden md:inline-block text-gray-800 hover:text-[#7C5832] transition-all duration-300"
           >
             Login
           </a>
+          <a href="https://dashboard.sendnow.live" target="_blank">
           <Button className="bg-[#7C5832] hover:bg-[#7C5832]/90 text-white rounded-full">
             Try for Free
           </Button>
+          </a>
           <button
             className="md:hidden text-gray-800"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
