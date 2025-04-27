@@ -6,6 +6,7 @@ import {
   FacebookIcon,
   LinkedinIcon,
 } from "lucide-react";
+import logo from "../assets/logo.png";  
 
 const Footer = () => {
   const footerLinks = [
@@ -30,10 +31,7 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <TwitterIcon className="w-5 h-5" />, href: "#" },
-    { icon: <InstagramIcon className="w-5 h-5" />, href: "#" },
-    { icon: <FacebookIcon className="w-5 h-5" />, href: "#" },
-    { icon: <LinkedinIcon className="w-5 h-5" />, href: "#" },
+    { icon: <TwitterIcon className="w-5 h-5" />, href: "https://x.com/carter_ale15512" },
   ];
 
   return (
@@ -47,9 +45,7 @@ const Footer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="text-[#7C5832] font-bold text-2xl mb-4">
-              send<span className="text-[#B79F85]">now</span>
-            </div>
+           <img src={logo} style={{width:"7rem", marginBottom:"20px"}}/>
             <p className="text-gray-600 mb-4">
               Understand every click, view, and interaction with your shared content.
             </p>
