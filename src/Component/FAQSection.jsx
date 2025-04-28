@@ -17,7 +17,7 @@ const FAQSection = () => {
   const faqs = [
     {
       question: "Which file formats can I share with Sendnow?",
-      answer: "We've got you covered—upload PDFs, Word/Excel docs, PPTs, images (JPG/PNG/GIF) and videos (MP4/AVI). Plus, you can link-to-link files for that extra flexibility. (Free plan caps each file smaller, Pro/Enterprise goes big.)",
+      answer: "We've got you covered—upload PDFs, Word/Excel docs, and videos (MP4/AVI). Plus, you can link-to-link files for that extra flexibility. (Free plan caps each file smaller, Pro/Enterprise goes big.)",
     },
     {
       question: "How long do my links stay active?",
