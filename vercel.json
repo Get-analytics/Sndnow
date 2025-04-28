@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "sendnow.live"
+        }
+      ],
+      "destination": "https://www.sendnow.live/",
+      "permanent": true
+    }
+  ]
+}
