@@ -110,7 +110,7 @@ const UploadSection= () => {
                   </button>
                 </div>
                 <p className="text-sm text-gray-500">
-                  Note: Upload PDFs, Docs, PPTs, images, or videos. Maximum file size varies by plan—upgrade anytime for higher limits and advanced analytics.
+                  Note: Upload PDFs, Docs, or videos. Maximum file size varies by plan—upgrade anytime for higher limits and advanced analytics.
                 </p>
               </motion.div>
 
