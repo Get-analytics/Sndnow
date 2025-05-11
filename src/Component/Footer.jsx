@@ -100,12 +100,12 @@ const Footer = () => {
               <p className="text-[#7C5832]">sendnow.live@gmail.com</p>
              
               <a
-                href="https://x.com/carter_ale15512"
+                href="https://x.com/sendnow_live"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#7C5832] underline"
               >
-                Alex Carter
+               Sendnow Live
               </a>
             </div>
           </motion.div>
