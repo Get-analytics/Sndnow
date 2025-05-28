@@ -10,7 +10,7 @@ const PricingSection = () => {
     triggerOnce: true,
   });
 
-  const pricingPlans = [
+   const pricingPlans = [
     {
       name: "Free Plan",
       price: "$0",
@@ -21,7 +21,7 @@ const PricingSection = () => {
         { text: "Links active for 7 days", available: true },
         { text: "No heatmap", available: false },
         { text: "No analytics export", available: false },
-        { text: "Includes watermark", available: false }
+        { text: "Watermark", available: true }
       ],
       cta: "Get Started",
       ctaVariant: "outline",
@@ -37,9 +37,9 @@ const PricingSection = () => {
         { text: "Links active for 2 months", available: true },
         { text: "No heatmap", available: false },
         { text: "Analytics export", available: true },
-        { text: "No watermark", available: true }
+        { text: "Watermark", available: true }
       ],
-      cta: "Coming Soon",
+      cta: "Comming Soon",
       ctaVariant: "default",
       highlight: false
     },
@@ -53,10 +53,10 @@ const PricingSection = () => {
         { text: "Links active for 3 months", available: true },
         { text: "Heatmap analytics", available: true },
         { text: "Analytics export", available: true },
-        { text: "No watermark", available: true },
+        { text: "Watermark", available: false },
         { text: "Custom domain", available: true }
       ],
-      cta: "Coming Soon",
+      cta: "Comming Soon",
       ctaVariant: "default",
       highlight: true
     },
@@ -71,6 +71,7 @@ const PricingSection = () => {
         { text: "Advanced heatmap analytics", available: true },
         { text: "Advanced analytics export", available: true },
         { text: "Priority support", available: true },
+        { text: "Watermark", available: false },
         { text: "API access", available: true }
       ],
       cta: "Contact Us",
