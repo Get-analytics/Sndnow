@@ -13,7 +13,6 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -26,6 +25,25 @@ const Header = () => {
     { name: "FAQ", href: "#faq" },
     { name: "Contact", href: "#contact" },
   ];
+
+  const scrollToSection = (e, href) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+
+    // Wait until mobile menu closes
+    setTimeout(() => {
+      const target = document.querySelector(href);
+      const headerHeight = document.querySelector("header")?.offsetHeight || 80;
+
+      if (target) {
+        const top = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+        window.scrollTo({
+          top,
+          behavior: "smooth",
+        });
+      }
+    }, 400); // delay for animation to complete
+  };
 
   return (
     <motion.header
@@ -49,17 +67,14 @@ const Header = () => {
           </Link>
         </motion.div>
 
+        {/* Desktop nav */}
         <nav className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               className="text-gray-800 hover:text-[#7C5832] transition-all duration-300"
-              onClick={(e) => {
-                e.preventDefault();
-                const el = document.querySelector(link.href);
-                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-              }}
+              onClick={(e) => scrollToSection(e, link.href)}
             >
               {link.name}
             </a>
@@ -68,15 +83,16 @@ const Header = () => {
 
         <div className="flex items-center space-x-4">
           <a
-            href="https://dashboard.sendnow.live/login" target="_blank"
+            href="https://dashboard.sendnow.live/login"
+            target="_blank"
             className="hidden md:inline-block text-gray-800 hover:text-[#7C5832] transition-all duration-300"
           >
             Login
           </a>
           <a href="https://dashboard.sendnow.live" target="_blank">
-          <Button className="bg-[#7C5832] hover:bg-[#7C5832]/90 text-white rounded-full">
-            Try for Free
-          </Button>
+            <Button className="bg-[#7C5832] hover:bg-[#7C5832]/90 text-white rounded-full">
+              Try for Free
+            </Button>
           </a>
           <button
             className="md:hidden text-gray-800"
@@ -87,6 +103,7 @@ const Header = () => {
         </div>
       </div>
 
+      {/* Mobile nav */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -102,18 +119,13 @@ const Header = () => {
                   key={link.name}
                   href={link.href}
                   className="text-gray-800 hover:text-[#7C5832] transition-all py-2"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setMobileMenuOpen(false);
-                    const el = document.querySelector(link.href);
-                    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }}
+                  onClick={(e) => scrollToSection(e, link.href)}
                 >
                   {link.name}
                 </a>
               ))}
               <a
-                href="#"
+                href="https://dashboard.sendnow.live/login"
                 className="text-gray-800 hover:text-[#7C5832] transition-all py-2"
               >
                 Login
